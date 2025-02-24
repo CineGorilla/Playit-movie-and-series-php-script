@@ -1,1 +1,1 @@
-# Playit-movie-and-series-php-script
+# Playit movie and series php script
