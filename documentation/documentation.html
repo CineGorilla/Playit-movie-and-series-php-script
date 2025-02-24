@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Playit - Documentation - How to use!</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.png">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">  
+</head> 
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Playit</span><span class="text-bold"> Docs</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Documentation</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: June 6th, 2021</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="introduction-section" class="doc-section">
+                                <h2 class="section-title">Introduction</h2>
+                                <div class="section-block">
+                                    <p><strong>Playit - Movie & Tv Shows Php Script</strong> is a fully accomplished & outstanding movies & tv shows streaming platform with TMDB data generate(title, images, description, actors, etc...) that's easy to use as well as it comes with a completely responsive design(desktop, tablet, mobile, etc..), it has statistic dashboard ready in it where you can track the website stats. It comes with an astonishing backend & 2 styles of frontend i.e. dark and light.
+                                    </p>
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+								<div id="requirements"  class="section-block">
+									<h3 class="block-title">Server Requirements</h3>
+									<h6>Checking to ensure that your web host have the minimum requirements to run Playit.</h6>
+									<ul class="list">
+										<li>PHP >= 7.3</li>
+										<li>BCMath PHP Extension</li>
+										<li>Ctype PHP Extension</li>
+										<li>JSON PHP Extension</li>
+										<li>Mbstring PHP Extension</li>
+										<li>OpenSSL PHP Extension</li>
+										<li>PDO PHP Extension</li>
+										<li>Tokenizer PHP Extension</li>
+										<li>XML PHP Extension</li>
+										<li>Fileinfo PHP Extension</li>
+										<li>Curl PHP Extension</li>
+									</ul>
+									<h3 class="block-title">Unzip and Upload</h3>
+                                    <p>Extract the archive you have downloaded. Copy all files from playit_script folder and upload to your server.</p>
+									<p><b>Note:</b> Make sure .env and .htaccess extract properly. If you did't know where is env file then please check File Structure</p>
+									<div class="section-block">
+										<h6>File Structure - playit_script</h6>
+										<img class="img-fluid" src="assets/images/files1.png" alt="File Structure" />
+									</div><!--//section-block-->
+								</div>
+								<div id="google-analytics"  class="section-block">
+									<h3 class="block-title">You have obtain the credentials to communicate with Google Analytics</h3><br/>
+									<h4>Getting credentials</h4>
+									<p>
+										The first thing you’ll need to do is to get some credentials to use Google API’s. I’m assuming that you’ve already created a Google account and are signed in. Head over to <a href="https://console.developers.google.com/apis">Google API’s site</a> and click "Select a project" in the header.
+									</p>
+									<img class="img-fluid" src="assets/images/ga-1.jfif" alt="Google Analytics" />
+									<p>
+										Next up we must specify which API’s the project may consume. In the list of available API’s click "Google Analytics API". On the next screen click "Enable".
+									</p>
+									<img class="img-fluid" src="assets/images/ga-2.jfif" alt="Google Analytics" />
+									<p>
+										Now that you’ve created a project that has access to the Analytics API it’s time to download a file with these credentials. Click "Credentials" in the sidebar. You’ll want to create a "Service account key".
+									</p>
+									<img class="img-fluid" src="assets/images/ga-3.jfif" alt="Google Analytics" />
+									<p>
+										On the next screen you can give the service account a name. You can name it anything you’d like. In the service account id you’ll see an email address. We’ll use this email address later on in this guide. Select "JSON" as the key type and click "Create" to download the JSON file.
+									</p>
+									<img class="img-fluid" src="assets/images/ga-4.jfif" alt="Google Analytics" />
+									<p>
+										Save the json inside your Laravel project at the location specified in the <b>(storage\app\analytics\service_account_credentials.json) </b> key of the config file of this package. Because the json file contains potentially sensitive information I don't recommend committing it to your git repository.
+										<br/>
+										<br/>
+										<b>Note:</b> rename the json file if its isn't "service_account_credentials.json".
+									</p>
+									<h4>Granting permissions to your Analytics property</h4><br/>
+									<p>
+										I'm assuming that you've already created a Analytics account on the <a href="https://analytics.google.com/analytics" >Analytics site</a>. Go to "User management" in the Admin-section of the property.
+									</p>
+									<img class="img-fluid" src="assets/images/ga-5.jfif" alt="Google Analytics" />
+									<p>
+										On this screen you can grant access to the email address found in the client_email key from the json file you download in the previous step. Read only access is enough.
+									</p>
+									<img class="img-fluid" src="assets/images/ga-6.jfif" alt="Google Analytics" />
+									<h6>Getting the view id</h6>
+									<p>
+										The last thing you'll have to do is fill in the view_id in the config file. You can get the right value on the <a href="https://analytics.google.com/analytics">Analytics site</a>. Go to "View setting" in the Admin-section of the property.
+									</p>
+									
+								</div><!--//section-block-->
+								<div id="step1"  class="section-block">
+								<h3 class="block-title">The following quick steps show how the installation progress.</h3><br/>
+									<h3 class="block-title">Step 1: Create New MySQL Database and Assign User</h3>
+									<p>
+										Before you can import a database using phpMyAdmin, you’ll need to create a blank database first:
+										<li>Log into cPanel</li>
+										<li>Under Databases navigate to MySQL Databases</li>
+										<li>Enter the name of the new database in the Create New Database field, then select Create Database</li>
+                                    </p>
+									<img class="img-fluid" src="assets/images/install-1.png" alt="Installation Step" /><br/><br/>
+									
+									<p>
+										<li>Once it finishes, click Go Back, then click Add User to Database</li>
+										<li>Select the correct user in the User box, select the new database in the Database list box, then Add</li>
+										<li>Select All Privileges (unless you have a reason or policy that specifies account privileges)</li>
+										<li>Click Make Changes</li>
+                                    </p>
+								</div>
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">Step 2: Import MySQL Database with phpMyAdmin</h3>
+                                    <p>
+										To import a dump file into the new database using the phpMyAdmin web interface:
+										<li>Log into cPanel</li>
+										<li>In the Databases section, select phpMyAdmin</li>
+                                    </p>
+									<img class="img-fluid" src="assets/images/install-2.png" alt="Installation Step" /><br/><br/>
+									<p>
+										<li>In the left column, select the newly-created database as seen in the image below:</li>
+                                    </p>
+									<img class="img-fluid" src="assets/images/install-3.png" alt="Installation Step" /><br/><br/>
+									<p>
+										<li>Click the Import tab (next to the Export tab)</li>
+										<li>Next to File to Import, select Browse, then choose the file you downloaded [playit-database.sql] and select Go</li>
+									</p>
+                                </div><!--//section-block-->
+								<div id="step3"  class="section-block">
+                                    <h3 class="block-title">Step Three: Editing the .env file!</h3>
+									<h4>Editing .env file</h4>
+									<p>
+										After creating the database, we will add the database credentials in our application. This .env environment file which will have all the sensitive data like database credentials, mail driver credentials, etc because it’s not recommended to store such information directly inside the code (environment files are not limited to PHP. They are used in all other major frameworks). Values inside the .env files are loaded inside the files from the config directory.Let’s add the value for database and mails.
+                                    </p>
+									<p>
+										Once you had added the database and mail credentials. You have to get TMDB and <a href="#google-analytics">Google Analytics Views ID.</a>
+									</p>
+									<h4>How to get TMDB Token</h4>
+									<p>
+										<b>In order to request an API token from TMDB:</b>
+										<ul>
+											<li>Create a <a href="https://www.themoviedb.org/account/signup" target="_blank">free account</a></li>
+											<li>Check your e-mail to verify your account.</li>
+											<li>Visit the <a href="https://www.themoviedb.org/settings/api" target="_blank">API Settings page</a> in your Account Settings and request an API token</li>
+											<li>You should now have an API token [API Read Access Token (v4 auth)] and be ready to go!</li>
+										</ul>
+									</p>
+									<p>
+									<h4>Required Field to be change:</h4>
+									
+<pre class=" language-markup"><code class=" language-markup">APP_NAME=Laravel
+
+TMDB_TOKEN=
+ANALYTICS_VIEW_ID=
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_FROM_ADDRESS=admin@me.com
+</code></pre>
+									</p>
+									<p>
+										<b>Then Click Save Install.</b> This may take time to migrate database, so please be patient.
+									</p>
+                                </div><!--//section-block-->
+								<div id="step4"  class="section-block">
+                                    <h3 class="block-title">Step Four</h3>
+									<p><b>Finish Installation</b></p>
+									<p>Congratulations! Yo!Stream is successfully installed.</p>
+									<img class="img-fluid" src="assets/images/install-7.jpg" alt="Installation Step" /><br/><br/>
+									<b>Admin Access</b>
+									<p>Go to https://yoursite.com/login after successfully configuration</p>
+									<p>We created an admin account for you by default</p>
+									<p>
+									<b>Email:</b> admin@me.com<br/>
+									<b>Pass:</b> password
+									</p>
+								</div>
+                            </section><!--//doc-section-->
+                            <section id="site-configuration" class="doc-section">
+                                <h2 class="section-title">Site Configuration</h2>
+                                <div class="section-block">
+                                    <p>
+                                        To set the site name, description, logo, favicon etc. go to Admin > Settings > General.
+                                    </p>
+									<p><b>General Settings Feilds</b><br/></p>
+									<pre>Site Name</pre>
+									<pre>Site Title</pre>
+									<pre>Site Description</pre>
+									<pre>Site Keywords</pre>
+									<pre>Copyright Text</pre>
+									<pre>Site Author</pre>
+									<pre>Site Email</pre>
+									<pre>Logo</pre>
+									<pre>Favicon</pre>
+									<pre>Movies / Series / Items Per Page</pre>
+									<pre>Favicon</pre>
+									<pre>Comments Moderation(Check if you want every comment to moderate before showing to site)</pre>
+									<pre>Maintenance Mode(Check this if your site in maintenance!)</pre>
+									<pre>Othe Social Links - Facebook, Twitter, Youtube, etc..</pre>
+									
+									<p><b>Search Engines Settings Feilds</b><br/></p>
+									<pre>Google - site verification</pre>
+									<pre>Bing - site verification</pre>
+									<pre>Yandex - site verification</pre>
+									<pre>Google analytics - Important if you want to use Stats tab for Realtime stats, Pageviews etc..</pre>
+									<pre>Robots</pre>
+                                </div><!--//section-block-->
+                                
+                            </section><!--//doc-section-->
+                            <section id="movies" class="doc-section">
+                                <h2 class="section-title">How to Add Movies</h2>
+                                <div class="section-block">
+                                    <p>To Add a Movie go to Admin > Movies > Add Movie</p>
+									<img class="img-fluid" src="assets/images/movie-1.jpg" alt="Adding Movie" />
+									<p>Then add TMDB ID for the Movie eg. https://www.themoviedb.org/movie/<b>464052</b>-wonder-woman-1984</p>
+									<p>Enter ID <b>464052</b> in the feild and click generate button.</p>
+									<img class="img-fluid" src="assets/images/movie-2.jpg" alt="Adding Movie" />
+									<p>That will fetch the data from TMDB. You just have to enter player name, player embed url, download name, download link and quality.</p>
+									<p>That All. Click Publish.</p>
+                                </div>
+                            </section><!--//doc-section-->
+							<section id="series" class="doc-section">
+                                <h2 class="section-title">How to Add Series / Tv Shows</h2>
+                                <div class="section-block">
+                                    <p>To Add a Series go to Admin > Series > Add Series</p>
+									<img class="img-fluid" src="assets/images/series-1.jpg" alt="Adding series" />
+									<p>Then add TMDB ID for the Series eg. https://www.themoviedb.org/tv/<b>85271</b>-wandavision</p>
+									<p>Enter ID <b>85271</b> in the feild and click generate button.</p>
+									<img class="img-fluid" src="assets/images/series-2.jpg" alt="Adding series" />
+									<p>That will fetch the data from TMDB. You just have to enter quality.</p>
+									<p>That All. Click Publish.</p>
+                                </div>
+                            </section><!--//doc-section-->
+							<section id="episodes" class="doc-section">
+                                <h2 class="section-title">How to Add Series Episodes</h2>
+                                <div class="section-block">
+                                    <p>To Add a Episodes for any series - Go to Admin > Episodes > Add Episodes</p>
+									<img class="img-fluid" src="assets/images/episodes-1.jpg" alt="Adding episodes" />
+									<p>Then Select Series from the dropdown e.g American Gods [46639]</p>
+									<p>Click Generate Season button. That will show you another dropdown with season list.Select Season and Episode like that click genrated data for the episode!</p>
+									<img class="img-fluid" src="assets/images/episodes-2.jpg" alt="Adding episodes" />
+									<p>That will fetch the data from TMDB. You just have to enter player name, player embeded link,download name, download link.</p>
+									<p>That All. Click Publish.</p>
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="sitemaps" class="doc-section">
+                                <h2 class="section-title">How to Generate Sitemaps</h2>
+                                <div class="section-block">
+                                    <p>To Generate a sitemaps - Go to Admin > Sitemaps</p>
+									<img class="img-fluid" src="assets/images/sitemaps-1.jpg" alt="sitemaps" />
+									<p>Click Generate to generated the sitemaps for any of the follwing sitempas!</p>
+									<img class="img-fluid" src="assets/images/sitemaps-2.jpg" alt="sitemaps" />
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="stats" class="doc-section">
+                                <h2 class="section-title">How to View Analytics Stats</h2>
+                                <div class="section-block">
+                                    <p>To View Realtime Stats - Go to Admin > Analytics Stats > Realtime</p>
+									<img class="img-fluid" src="assets/images/stats-1.jpg" alt="stats" />
+									<p>To View Pageviews Stats - Go to Admin > Analytics Stats > Pageviews</p>
+									<img class="img-fluid" src="assets/images/stats-2.jpg" alt="stats" />
+									<p>To View SEO Stats - Go to Admin > Analytics Stats > SEO Stats</p>
+									<img class="img-fluid" src="assets/images/stats-3.jpg" alt="stats" />
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="newsletters" class="doc-section">
+                                <h2 class="section-title">How to View Newsletters List Subscribers and Send Mail</h2>
+                                <div class="section-block">
+                                    <p>To View List Subscribers - Go to Admin > Newsletters > Subscribers</p>
+									<img class="img-fluid" src="assets/images/newsletters-1.jpg" alt="newsletters" />
+									<p>To Send Mail to List Subscribers - Go to Admin > Newsletters > Send</p>
+									<img class="img-fluid" src="assets/images/newsletters-2.jpg" alt="newsletters" />
+                                </div>
+                            </section><!--//doc-section-->
+							
+							<section id="faq" class="doc-section">
+                                <h2 class="section-title">FAQ</h2>
+                                <div class="section-block">
+									<h6>Can I run on My Server?</h6>
+									<p>If you have all requirements on your server then yes you can run!. Please check requirements <a href="#requirements">Requirements tab</a></p>
+									<h6>Can I use this on more than one domain?</h6>
+									<p>With purchase license you have one domain permission. You need to get another licenses for your another domians if you want to use on more than one domain.</p>
+									<h6>Issue: Parse error: syntax error, unexpected 'class' (T_CLASS), expecting > identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in</h6>
+									<p>This means you do not have PHP 7.3 or newer version. Script needs PHP 7.3 or newer version.</p>
+									<h6>Issue: I'm Getting 500 Server Error</h6>
+									<p>It could be anything. Its a server error. Could be missing files Or missing server configuration. It may be permission issue too. If so please try to set 777 permission for storage and bootstrap folder and all folders and files on it.</p>
+									<h6>Issue: I'm Getting 404 Server Error</h6>
+									<p>A 404 is an HTTP status code that means you're able to communicate with the server but the server can't find the specific page.</p>
+                                </div>
+                            </section>
+							
+							
+							<section id="license" class="doc-section">
+                                <h2 class="section-title">License</h2>
+                                <div class="section-block">
+									<h5>Regular License</h5>
+									<p>Use, by you or one client, in a single end product which end users are not charged for.</p>
+                                </div>
+                            </section>
+                            </section><!--//doc-section-->
+
+                            <div id="html" class="section-block">
+                                    <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-thumbs-up"></i><!-- <i class="fas fa-thumbs-up"></i> Font Awesome fontawesome.com -->
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Note:</h4>
+                                            <p>To Use the Analytics Stats you have to first get the "service-account-credentials" JSON file and VIEW ID from Google Analytics Follow this step to get json and view id <a href="#google-analytics" >Click Here</a></p>
+                                        </div><!--//content-->
+                                    </div>
+                                    
+                            </div>
+							
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+	                                <a class="nav-link scrollto" href="#introduction-section">Introduction</a>
+	                                <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+										<a class="nav-link scrollto" href="#requirements">Requirements</a>
+										<a class="nav-link scrollto" href="#google-analytics">GA Json and View ID</a>
+                                        <a class="nav-link scrollto" href="#step1">Step One</a>
+                                        <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                        <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                        <a class="nav-link scrollto" href="#step4">Step Four</a>
+                                    </nav><!--//nav-->
+	                                <a class="nav-link scrollto" href="#site-configuration">Site Configuration</a>
+	                                <a class="nav-link scrollto" href="#movies">Adding Movies</a>
+	                                <a class="nav-link scrollto" href="#series">Adding Series</a>
+	                                <a class="nav-link scrollto" href="#episodes">Adding Episodes</a>
+	                                <a class="nav-link scrollto" href="#sitemaps">Generate Sitemaps</a>
+	                                <a class="nav-link scrollto" href="#stats">View Analytics Stats</a>
+	                                <a class="nav-link scrollto" href="#newsletters">Lists Newsletters</a>
+									<a class="nav-link scrollto" href="#faq">FAQ</a>
+									<a class="nav-link scrollto" href="#license">License</a>
+	                            </nav><!--//doc-menu-->
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            Playit - Movie and Tv Show Php Script!
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html> 
+
